@@ -147,9 +147,9 @@ You must complete this before upgrading to CoreDNS version `1.7.0`, but it's rec
    kubectl get deployment coredns --namespace kube-system -o=jsonpath='{$.spec.template.spec.containers[:1].image}'
    ```
 
-1. Update `coredns` to the recommended version by taking the output from the previous step and replacing `<1.7.0>` \(including `<>`\) with your cluster's recommended `coredns` version:
+1. Update `coredns` to the recommended version by taking the output from the previous step and replacing `<1.7.0>` \(exluding `<>`\) with your cluster's recommended `coredns` version:
 
    ```
    kubectl set image --namespace kube-system deployment.apps/coredns \
-               coredns=<602401143452.dkr.ecr.us-west-2.amazonaws.com>/eks/coredns:v<1.7.0>-eksbuild.1
+               coredns=602401143452.dkr.ecr.us-west-2.amazonaws.com/eks/coredns:v1.7.0-eksbuild.1
    ```
